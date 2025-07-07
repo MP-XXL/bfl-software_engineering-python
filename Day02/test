@@ -1,0 +1,18 @@
+#!/bin/bash
+
+read -p "Enter your username: " USERNAME
+
+read -p "Enter your age: " AGE
+
+read -p "Enter your favourite programming language: " FAVLANG
+
+touch user_info.py
+
+echo "$USERNAME" >> ./user_info.py
+
+echo "$AGE" >> ./user_info.py
+
+echo "$FAVLANG" >> ./user_info.py
+cat user_info.py
+
+
