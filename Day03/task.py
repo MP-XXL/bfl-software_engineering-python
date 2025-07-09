@@ -34,8 +34,8 @@ print(secret_word[-1])
 #Printing the word "Is" using slicing
 print(secret_word[6:8])
 
-#Printing the string reversed using slicing
-print(secret_word[::-1])
+#Prin:ting the string reversed using slicing
+print(secret_word[::2])
 
 #Printing every second character in the string (using step slicing ::2).
 print(secret_word[1::2])
