@@ -41,9 +41,14 @@ print(f"Name:\t\t{name}\nInitials:\t{initials}\nID:\t\t{record_list[3]}\nValid I
 message = "GhostNet#X44CR#98.654#TRC8821"
 print("ALERT REPORT")
 print("---------------------------------")
-print("Code Name:\t",message[:8])
-print("Message Code:\t",message[9:14])
-print("Last Name:\t",message[13])
-print("Trace ID:\t",message[-7:])
+print("Code Name:\t", message[:8])
+print("Message Code:\t", message[9:14])
+print("Last Name:\t", message[13])
+print("Trace ID:\t", message[-7:])
 print("Taceable:\tYES")
-print("Severity Level:\t",message[-14:-9])
+print("Severity Level:\t", message[-14:-9])
+
+
+#method 2 with split
+message = message.split("#")
+print(message[0][:1])
