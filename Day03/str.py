@@ -85,4 +85,4 @@ other_half = bio[-10: -7]
 upperGrammer = one_half.upper()
 print(other_half.upper())
 print(one_half.lower())
-print(upperGrammer)
+print(upperGrammer) 

@@ -22,6 +22,7 @@ print(is_married.startswith("true"))
 
 #converting a string list to a list type
 fruits = "Apple Banna Kiwi Orange"
+print(fruits)
 list_of_fruits = fruits.split(" ")
 print(list_of_fruits[0])
 print(list_of_fruits)
