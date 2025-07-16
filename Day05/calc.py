@@ -39,3 +39,10 @@ second_number = float(input("Enter the second number : "))
 exponentiation = first_number ** second_number
 print(f"{first_number} ** {second_number} = {exponentiation:.2f}")
 
+print("Enter two numbers to floor divide")
+# Prompt user to enter two numbers
+first_number = float(input("Enter the first number : "))
+second_number = float(input("Enter the second number : "))
+floor = first_number // second_number
+print(f"{first_number} // {second_number} = {floor:.2f}")
+
