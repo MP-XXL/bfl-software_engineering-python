@@ -4,12 +4,12 @@ isMarried = False
 #print(isMarried)
 #print(type(isMarried))
 
-first_name = "Tom"
+first_name = " "
 #print(bool(first_name))
 
-number = 0
+number = -1
 
-#print(bool(number))
+print(bool(number))
 
 
 var1 = "Code"
@@ -30,5 +30,5 @@ print(bool(num1))
 print(bool(num2))
 print(bool(num3))
 print(bool(num4))
-
+'''
 

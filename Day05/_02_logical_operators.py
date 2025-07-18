@@ -26,6 +26,36 @@ print(exponent)
 floor = first_number // second_number
 print(floor)
 
+print("----------")
+#compound operators
+first_number = 10
+first_number += 10
+print(first_number)
+
+first_number = 10
+first_number -= 10
+print(first_number)
+
+first_number = 10
+first_number *= 10
+print(first_number)
+
+first_number = 10
+first_number /= 10
+print(first_number)
+
+first_number = 10
+first_number //= 10
+print(first_number)
+
+first_number = 10
+first_number **= 10
+print(first_number)
+
+first_number = 10
+first_number %= 10
+print(first_number)
+
 
 
 
@@ -33,3 +63,11 @@ print(floor)
 # or operator
 
 print(first_number and second_number)
+
+varr11 = "0" + "%" *5 + "0"
+
+print(varr11)
+
+num1 = 5
+num1 //= 10
+print(num1)
