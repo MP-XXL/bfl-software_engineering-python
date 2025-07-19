@@ -68,6 +68,21 @@ varr11 = "0" + "%" *5 + "0"
 
 print(varr11)
 
-num1 = 5
-num1 //= 10
-print(num1)
+#Comparison operator (==)
+first_number = 8
+second_number = 2
+print(first_number > second_number)
+print(4 < 90)
+
+tom_total_score = 50
+pass_mark = 40
+print(tom_total_score > pass_mark)
+
+craigs_total_score = float(input("Enter a score : "))
+pass_mark = 40
+
+if craigs_total_score > pass_mark:
+    print("Pass!")
+
+else:
+    print("Failed!")
