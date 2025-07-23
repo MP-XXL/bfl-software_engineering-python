@@ -1,4 +1,8 @@
 # Task 1
+
+crade = []
+crade.insert(2, "X")
+print(len(crade))
 '''
 Create
 1. A list of your your favourite movies
@@ -77,5 +81,21 @@ desk.insert(1, walked_in_student)
 print("Final desk: ", desk)
 
 
+# Task 6
 
-
+account = [
+        ["1001", "Joy", "Savings", 1500],
+        ["1002", "David", "Current", 2000],
+        ["1003", "Ruth", "Savings", 1800]
+        ]
+'''
+'''
+##
+account.remove(account[1])
+print(account)
+##
+var1, var2 = account[1][1:3]
+print(var1, var2)
+##
+joys_account = account[0][1:3]
+print(joys_account)
