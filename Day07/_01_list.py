@@ -28,10 +28,11 @@ favourite_fruits.append("Cranberry")
 print("After updating")
 print(favourite_fruits)
 
-# Using Insert. Insert takes the index, element and sometimes step
+# Using Insert. Insert takes the index and element to add. Just two arguments.
 favourite_fruits = ["Mango", "Apple", "Orang", "Kiwi", "Banana"]
 print("Before adding")
 print(favourite_fruits)
 favourite_fruits.insert(3, "Strawberry")
 print("After updating")
 print(favourite_fruits)
+
