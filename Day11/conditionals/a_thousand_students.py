@@ -32,3 +32,21 @@ while i < limit:
 
 print("LIST OF 1,000 RANDOM STUDENTS \n", students)
 
+
+############### Version 3
+i = 0
+students = []
+while True:
+    if i < 1000:
+        student  = {
+            "ID": random.randint(1, 1000),
+            "name": (f"student{random.randint(0, 2000)}"),
+            "score": random.randint(1,100)
+            }
+        students.append(student)
+    else:
+        break
+    i += 1
+
+print("LIST OF 1,000 RANDOM STUDENTS USING IF STATEMENTS\n", students)
+
