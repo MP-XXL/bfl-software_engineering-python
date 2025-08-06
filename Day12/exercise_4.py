@@ -1,7 +1,7 @@
 """
 You try to withdraw money from a Nigerian ATM.
   The ATM has only ₦1000 notes and you have ₦10,000 in your account.
-   The machine allows withdrawal only if the amount requested is less than or equa    l to your balance.
+   The machine allows withdrawal only if the amount requested is less than or equal to your balance.
   The user enters the amount.
 
    Your  program  should decide:
@@ -15,7 +15,7 @@ amount = float(input("Enter amount to withdraw: "))
 if amount > 0 and amount <= balance:
     if amount % pay_denomination == 0:
         balance -= amount
-        print(f"You have been paid ${amount}. Your balance now is ${balance}")
+        print(f"You have been paid ₦ {amount:,.2f} Your balance now is ₦ {balance:,.2f}")
     else:
         print("Invalid amount")
 elif amount > balance:
