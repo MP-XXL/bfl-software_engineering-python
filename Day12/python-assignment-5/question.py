@@ -168,9 +168,9 @@ elif command == "register":
         else:
             print("Invalid command!")
         print("Login Successful!")
-        print(user)
+        print("\nNew user details: ", user)
         users_db.append(user)
-        print(users_db)
+        print("\nUSERS DATABASE : ", users_db)
     else:
         print(f"{user_name} already exists! Register with a unique username")
 else:
