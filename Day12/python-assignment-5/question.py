@@ -154,7 +154,7 @@ elif command == "register":
         user.update({"balance": user_balance})
         user.update({"is_verified": False})
         print("User registered successfully!\n New user details : ", user)
-        verification_action = input("Do you wish to verify? \"yes\" or \"no\"\nVerification cost: 1500 : ")
+        verification_action = input("Do you wish to verify? \"yes\" or \"no\"\nVerification cost: 1500 : ").lower()
         if verification_action == "yes":
             if user["balance"] >= verification_amount:
                 user["balance"] -= verification_amount
