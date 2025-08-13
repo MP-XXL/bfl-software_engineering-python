@@ -24,13 +24,13 @@ for name in names:
 
 
 names = ["Tom", "Jerry", "Mimi", "Val", "John"]
-for i in names:
+for i in range(len(names)):
     print(i)
 
 #Printing the items and index
 names = ["Tom", "Jerry", "Mimi", "Val", "John"]
-for i in names:
-    print(name, i)
+for i in range(len(names)):
+    print(name[i], i)
 
 # Using step values and range
 names = ["Tom", "Jerry", "Mimi", "Val", "John"]
