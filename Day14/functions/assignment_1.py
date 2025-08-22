@@ -38,6 +38,17 @@ def count_vowels(text, vowels = "aeiou"):
     print(i)
 count_vowels("python is fun")
 
+# V2
+string_to_check = input("Enter strings to check for vowels : ")
+def count_vowels(text, vowels = "aeiou"):
+    i = 0
+    for vowel in vowels:
+        if vowel in text:
+            i += 1
+
+    print(i)
+count_vowels(string_to_check)
+
 """3. Write a function count_even(numbers) that counts how many even numbers are
 in a list.
 Example: count_even([1, 2, 3, 4, 6]) → 3"""
@@ -58,6 +69,7 @@ count_even([1, 2, 3, 4, 6, 8])
 the area of a triangle using the formula:
 Area=1/2×base×height
 Example: triangle_area(10, 5) → 25.0"""
+# V1
 def triangle_area(base, height):
     area = 0.5 * base * height
     print(area)
@@ -65,10 +77,20 @@ def triangle_area(base, height):
 
 triangle_area(10, 5)
 
+# V2
+triangle_base = int(input("Enter the value of the base : "))
+triangle_height = int(input("Enter the value of the height : "))
+def triangle_area(base, height):
+    area = 0.5 * base * height
+    print(area)
+
+
+triangle_area(triangle_base, triangle_height)
+
 """
 Write a function called check_password_strength that takes a password string and returns "Weak", "Medium", or "Strong" based on these criteria: 
 Weak (less than 6 characters), Medium (6-10 characters), Strong (more contains both letters and numbers)."""
-
+# V1
 def check_password_strength(password):
     if len(password) > 10 and password.isalnum() == True:
         print("Strong!")
@@ -77,4 +99,15 @@ def check_password_strength(password):
     if len(password) < 6:
         print("Weak!")
 check_password_strength("fh444444")
+
+# V2 
+user_password = input("Enter your password : ")
+def check_password_strength(password):
+    if len(password) > 10 and password.isalnum() == True:
+        print("Strong!")
+    if len(password) >= 6 and len(password) <= 10:
+        print("Medium")
+    if len(password) < 6:
+        print("Weak!")
+check_password_strength(user_password)
 
