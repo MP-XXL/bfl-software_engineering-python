@@ -69,14 +69,12 @@ triangle_area(10, 5)
 Write a function called check_password_strength that takes a password string and returns "Weak", "Medium", or "Strong" based on these criteria: 
 Weak (less than 6 characters), Medium (6-10 characters), Strong (more contains both letters and numbers)."""
 
-"""def check_password_strength(password):
-    letters = [
-    "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m",
-    "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"
-]
-    numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-    for character in password:
-        if character in letters or character in numbers:
-            print("Strong!")
-check_password_strength("7")
-"""
+def check_password_strength(password):
+    if len(password) > 10 and password.isalnum() == True:
+        print("Strong!")
+    if len(password) >= 6 and len(password) <= 10:
+        print("Medium")
+    if len(password) < 6:
+        print("Weak!")
+check_password_strength("fh444444")
+
