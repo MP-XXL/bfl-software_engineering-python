@@ -13,6 +13,8 @@ def start():
                 2. Enter \"2\" to update stock in inventory.
                 3. Enter \"3\" to initiate sale for a product.
                 4. Enter \"4\" to view current inventory.
+                5. Enter \"5\" to view most expensive product in the inventory
+                6. Enter \"6\" to view the total value of all remaining stock
                 \n>>> : """))
         user_choice(option)
 
@@ -32,6 +34,11 @@ def user_choice(choice_option):
         sell_product(store, product, quantity_to_sell)
     elif choice_option == 4:
         display_inventory(store)
+    elif choice_option == 5:
+        most_expensive_product(store)
+    elif choice_option == 6:
+        total_value = total_potential_sales(store)
+        print(f"The current inventory is valued at {total_value :,.2f}")
 # Adding a new product to the to inventory
 def add_product(store, name, price, quantity):
     if name in store:
@@ -89,4 +96,25 @@ def display_inventory(store):
                 |__
                 """)
     print("TOTAL NUMBER OF PRODUCTS")
+    total_products = 0
+    for products in store:
+        total_products += store[products]["quantity"]
+    print(f"Total number of products in store = {total_products}")
+# Return most expensive product
+def most_expensive_product(store):
+    highest_price = 0
+    for product in store:
+        if store[product]["price"] > highest_price:
+            highest_price = store[product]["price"]
+            print(f"The product with the highest price is {product} and it costs {highest_price}")
+# Return total potential sales
+def total_potential_sales(store):
+    total_products = 0
+    for product in store:
+        total_products += store[product]["quantity"]
+    total_price = 0
+    for products in store:
+        total_price += store[products]["price"]
+    return total_products * total_price
+
 start()
