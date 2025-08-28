@@ -15,9 +15,12 @@ def start():
                 4. Enter \"4\" to view current inventory.
                 5. Enter \"5\" to view most expensive product in the inventory
                 6. Enter \"6\" to view the total value of all remaining stock
+                7. Enter \"0\" to exit the inventory
                 \n>>> : """))
+        if option == 0:
+            print("Program terminated!")
+            break
         user_choice(option)
-
 def user_choice(choice_option):
     if choice_option == 1:
         product = input("Enter product name to add to inventory: ").capitalize()
@@ -39,6 +42,8 @@ def user_choice(choice_option):
     elif choice_option == 6:
         total_value = total_potential_sales(store)
         print(f"The current inventory is valued at {total_value :,.2f}")
+    else:
+        print("Invalid command!")
 # Adding a new product to the to inventory
 def add_product(store, name, price, quantity):
     if name in store:
