@@ -24,3 +24,35 @@ The  function should
 
 Returns a list of employees working on that day.
 """
+shifts = {
+          "Alice": ["Monday", "Wednesday"],
+          "Bob": ["Tuesday", "Thursday"],
+          "Charlie": ["Monday", "Friday"]
+          }
+def shift_manager():
+    name = input("Enter employee name : ").capitalize()
+    day = input("Add day of shift : ").capitalize()
+    if name in shifts:
+        add_shift(name, day)
+    else:
+        add_employee(name, day)
+    
+def add_shift(employee, day):
+    for days in [shifts[employee]]:
+        if day in shifts[employee]:
+            print("Day already exists")
+        else:
+            shifts[employee].append(day)
+
+def add_employee(employee, day):
+    shifts[employee] = [day]
+    print(shifts)
+
+# Getting schedule days
+def get_schedule(day):
+    for employee in shifts:
+        if day in shifts[employee]:
+            print(employee)
+day = input("Enter the day to filter by : ").capitalize()
+get_schedule(day)
+shift_manager()
