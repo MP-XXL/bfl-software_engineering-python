@@ -25,3 +25,20 @@ print(convert_temperature(300, "K"))
 print(convert_temperature(100, "F"))  
 # "Invalid scale. Use 'C' for Celsius or 'K' for Kelvin."
 """
+scales = ["C", "K"]
+def convert():
+    convert = True
+    while convert:
+        val = float(input("Enter value : "))
+        scal = input("Enter scale : ").upper()
+        for s in scales:
+            if s == scal:
+                convert_temperature(val, scal)
+def convert_temperature(value, scale):
+    if scale == "K":
+        C = value - 273.15
+        print(C)
+    else:
+        K = value + 273.15
+        print(K)
+convert()
