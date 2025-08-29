@@ -114,12 +114,9 @@ def most_expensive_product(store):
             print(f"The product with the highest price is {product} and it costs {highest_price}")
 # Return total potential sales
 def total_potential_sales(store):
-    total_products = 0
-    for product in store:
-        total_products += store[product]["quantity"]
     total_price = 0
     for products in store:
-        total_price += store[products]["price"]
-    return total_products * total_price
+        total_price += store[products]["price"] * store[products]["quantity"]
+    return total_price
 
 start()
