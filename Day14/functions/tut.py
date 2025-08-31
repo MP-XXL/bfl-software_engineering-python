@@ -53,6 +53,9 @@ def update_stock(store, name, quantity):
         return "Product not in store. Use the add option."
 
 def sell_product(store, name, quantity):
-    if name in store:
-        print(name)
+    if name not in store:
+        print("Product is out of stock")
+    else:
+        if quantity > store[name]["quantity"]:
+            print("Yay!")
 program_start()
