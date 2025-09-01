@@ -165,7 +165,7 @@ print(task12_is_prime(7))
 
 
 # 13
-x = "I am global"
+x = 700
 def task13_scope_demo():
     """
     Task 13:
@@ -174,7 +174,7 @@ def task13_scope_demo():
     create a local variable with the same name. Print both
     to show how local and global scope works.
     """
-    x = "I am local"
+    x = 4
     print(x)
 print(x)
 task13_scope_demo()
@@ -218,11 +218,10 @@ def task16_factorial(n):
     using a loop (not recursion).
     Example: factorial(5) → 120
     """
-    factorial = 1
-    for num in range(n, 1, -1):
-        factorial *=  num
-        print(factorial)
-task16_factorial(5)
+    while n > 0:
+        factorial += n * n
+        n -= 1
+    print(factorial)
 
 
 # 17
@@ -233,11 +232,8 @@ def task17_palindrome_check(word):
     A palindrome reads the same forwards and backwards.
     Example: palindrome_check("madam") → True
     """
-    if word[-1::-1] == word[0:]:
-        return True
-    else:
-        return False
-print(task17_palindrome_check("bob"))
+    pass
+
 
 # 18
 def task18_convert_minutes_to_hours(minutes):
@@ -247,11 +243,8 @@ def task18_convert_minutes_to_hours(minutes):
     and converts it into hours and minutes.
     Example: 130 minutes → "2 hour(s) 10 minute(s)"
     """
-    hours = minutes // 60
-    remainder = minutes % 60
-    return (f"{minutes} minutes = {hours}hours(s) : {remainder}minutes(s)")
-minute = float(input("Enter minutes : "))
-print(task18_convert_minutes_to_hours(130))
+    pass
+
 
 # 19
 def task19_find_min(numbers):
@@ -261,12 +254,7 @@ def task19_find_min(numbers):
     and returns the smallest number.
     Do not use Python's built-in min() function.
     """
-    min_num = numbers[0]
-    for num in numbers:
-        if min_num > num:
-            min_num = num
-    return min_num
-print(task19_find_min([3, 4, 8, 1]))
+    pass
 
 
 # 20
@@ -276,9 +264,7 @@ def task20_simple_interest(principal, rate, time):
     Write a function that calculates simple interest.
     Formula: (principal * rate * time) / 100
     """
-    interest = (principal * rate * time) / 100
-    return interest
-print(task20_simple_interest(20, 0.25, 10))
+    pass
 
 
 # 21
@@ -290,15 +276,7 @@ def task21_calculator(a, b, operation):
     and return the result.
     Example: calculator(4, 2, "+") → 6
     """
-    if operation == "+":
-        return a + b
-    elif operation == "-":
-        return a - b
-    elif operation == "*":
-        return a * b
-    elif operation == "/":
-        return a / b
-print(task21_calculator(5, 5, "+"))
+    pass
 
 
 # 22
@@ -308,11 +286,7 @@ def task22_string_length(text):
     Write a function that accepts a string
     and returns its length without using len().
     """
-    i = 0
-    for letter in text:
-        i += 1
-    return (f"length text =  {i}")
-print(task22_string_length("word"))
+    pass
 
 
 # 23
@@ -328,19 +302,7 @@ def task23_grade_student(score):
     E: 30–39
     F: 0–29
     """
-    if score >= 70 and score <= 100:
-        return "A"
-    if score >= 60 and score <= 69:
-        return "B"
-    if score >= 50 and score <= 59:
-        return "C"
-    if score >= 40 and score <= 49:
-        return "D"
-    if score >= 30 and score <= 39:
-        return "E"
-    if score >= 0 and score <= 29:
-        return "F"
-print(task23_grade_student(23))
+    pass
 
 
 # 24
@@ -351,14 +313,11 @@ def task24_swap_values(a, b):
     and returns them swapped.
     Example: swap_values(3, 7) → (7, 3)
     """
-    a, b = b, a
-    return (a, b)
-print(task24_swap_values(4, 5))
+    pass
 
 
 # 25
-global_value = {"value": 1}
-def task25_scope_counter(global_value):
+def task25_scope_counter():
     """
     Task 25:
     Create a counter function that uses a global variable.
@@ -366,10 +325,7 @@ def task25_scope_counter(global_value):
     the counter by 1 and print the current count.
     This demonstrates modifying global variables inside functions.
     """
-    global_value["value"] += 1
-    return global_value
-print(task25_scope_counter(global_value))
-
+    pass
 
 
 # ================================
@@ -385,9 +341,7 @@ def task26_calculate_bmi(weight, height):
     Formula: BMI = weight / (height^2)
     Round the result to 2 decimal places.
     """
-    BMI = weight / (height ** 2)
-    return BMI
-print(task26_calculate_bmi(300, 75))
+    pass
 
 
 # 27
@@ -398,9 +352,7 @@ def task27_discounted_price(price, discount_percent):
     and returns the final price after discount.
     Example: discounted_price(1000, 20) → 800
     """
-    final_price  = (price - (price * (discount_percent / 100)))
-    return final_price
-print(task27_discounted_price(1000, 20))
+    pass
 
 
 # 28
@@ -414,16 +366,9 @@ def task28_movie_ticket_price(age):
     - Age >= 60: 600
     Return the ticket price.
     """
-    if age >= 12 and age < 18:
-        return 700
-    elif age >= 18 and age < 60:
-        return 1000
-    elif age < 12:
-        return 500
-    elif age >= 60:
-        return 600
+    pass
 
-print(task28_movie_ticket_price(60))
+
 # 29
 def task29_shopping_total(prices):
     """
@@ -431,11 +376,8 @@ def task29_shopping_total(prices):
     Write a function that accepts a list of item prices
     and returns the total cost of all items.
     """
-    total = 0
-    for price in prices:
-        total += price
-    return total
-print(task29_shopping_total([500, 400, 800]))
+    pass
+
 
 # 30
 def task30_convert_to_seconds(hours, minutes, seconds):
@@ -445,11 +387,7 @@ def task30_convert_to_seconds(hours, minutes, seconds):
     and converts the entire time to total seconds.
     Example: 1h 1m 1s → 3661 seconds
     """
-    hour = hours * 3600
-    minute = minutes * 60
-    total_seconds = (hour + minute + seconds)
-    return total_seconds
-print(task30_convert_to_seconds(1, 1, 1))
+    pass
 
 
 # 31
@@ -460,14 +398,7 @@ def task31_find_median(numbers):
     and returns the median value.
     (Hint: Sort the list first, then handle odd/even length cases.)
     """
-    num = sorted(numbers)
-    n = len(num)
-    mid = n // 2
-    if n % 2 == 1:
-        return num[mid]
-    else:
-        return (num[mid - 1] + num[mid]) / 2
-print(task31_find_median([2, 4, 5, 4, 1, 8]))
+    pass
 
 
 # 32
@@ -479,12 +410,7 @@ def task32_parking_fee(hours):
     - Every additional hour: 100 Naira
     Example: parking_fee(5) → 200 + 3*100 = 500
     """
-    if hours > 2:
-        parking_fee = 200 + ((hours - 2) * 100)
-    else:
-        parking_fee = 200 * hours
-    return parking_fee
-print(task32_parking_fee(5))
+    pass
 
 
 # 33
@@ -495,14 +421,7 @@ def task33_word_count(sentence):
     and returns the number of words in it.
     Example: "I love Python" → 3
     """
-    count = 1
-    for word in sentence:
-        if word == " ":
-            count += 1
-        else:
-            continue
-    return(f"word count = {count}")
-print(task33_word_count("I am python"))
+    pass
 
 
 # 34
@@ -513,11 +432,7 @@ def task34_capitalize_names(names):
     and returns a new list with each name capitalized.
     Example: ["john", "mary"] → ["John", "Mary"]
     """
-    new_names =[]
-    for name in names:
-        new_names.append(name.capitalize())
-    return new_names
-print(task34_capitalize_names(["leo", "buds", "kat"]))
+    pass
 
 
 # 35
@@ -527,11 +442,7 @@ def task35_student_pass_fail(score):
     Write a function that accepts a student's score
     and returns "Pass" if score >= 50, otherwise "Fail".
     """
-    if score >= 50:
-        return "Pass"
-    else:
-        return "Fail"
-print(task35_student_pass_fail(45))
+    pass
 
 
 # 36
@@ -544,19 +455,10 @@ def task36_calculate_fine(days_late):
     - Beyond 10 days: 100 per day
     Example: calculate_fine(7) → 5*20 + 2*50 = 200
     """
-    extra_days = days_late - 5
-    extra_late = days_late - 10
-    if days_late <= 5:
-        fine = 20 * days_late
-    elif days_late > 5 and days_late <= 10:
-        fine = 20 * 5 + extra_days * 50
-    else:
-        fine = 20 * 5 + days_late * 50 + extra_late * 100
-    return fine
-print(task36_calculate_fine(7))
+    pass
 
 
-# 37****
+# 37
 def task37_convert_currency(amount, rate):
     """
     Task 37:
@@ -564,11 +466,7 @@ def task37_convert_currency(amount, rate):
     using a given conversion rate.
     Example: convert_currency(100, 1500) → 150000
     """
-       convert = amount * rate
-    return convert
-total = task37_convert_currency(100,1500)
-print(total)
-
+    pass
 
 
 # 38
@@ -578,10 +476,7 @@ def task38_gas_station_bill(liters, price_per_liter):
     Write a function that accepts the number of liters purchased
     and the price per liter, then returns the total cost.
     """
-    total = liters * price_per_liter
-    return total
-total = task38_gas_station_bill(6,1500)
-print(total)
+    pass
 
 
 # 39
@@ -593,12 +488,7 @@ def task39_is_leap_year(year):
     Rule: Year divisible by 4 → leap year, but divisible by 100 → not leap,
     unless divisible by 400.
     """
-     if year % 400 == 0:
-        return True
-    if year % 100 == 0:
-        return False
-    return year % 4 == 0
-total = task39_is_leap_year(2020)
+    pass
 
 
 # 40
@@ -611,21 +501,7 @@ def task40_password_strength(password):
     - Contains at least one uppercase letter
     Return "Strong" if all conditions are met, otherwise "Weak".
     """
-     length = len(password)
-
-    if length <= 6:
-        return "weak"
-    if length >= 6 and length <= 10:
-        return "medium"
-    has_letter = any(c.isalpha() for c in password)
-    has_digit = any(c.isdigit() for c in password)
-    
-    if has_letter and has_digit:
-        return "strong"
-    else:
-        return "medium"
-total = task40_password_strength("Methysekag1")
-print(total)
+    pass
 
 
 # 41
@@ -636,12 +512,7 @@ def task41_shirt_order(quantity, price_per_shirt, discount_threshold=10, discoun
     - If quantity >= discount_threshold, apply discount_rate.
     Example: shirt_order(12, 2000) → discounted price
     """
-    total = quantity * price_per_shirt
-    if quantity >= discount_threshold:
-        total = total * (1 - discount_rate)
-    return round(total, 2)
-total = task41_shirt_order(20,2000)
-print(total)
+    pass
 
 
 # 42
@@ -662,14 +533,7 @@ def task43_student_average(scores):
     and returns the student's average score.
     Example: {"math": 80, "english": 70} → 75.0
     """
-       if not scores:
-        return 0.0
-    total = 0
-    for subject in scores:
-        total += scores[subject]
-    return total / len(scores)
-total = task43_student_average({"math": 80, "english": 70})
-print(total)
+    pass
 
 
 # 44
@@ -690,10 +554,7 @@ def task45_salary_after_tax(salary, tax_rate=0.15):
     Write a function that calculates net salary after deducting tax.
     Example: salary_after_tax(100000) → 85000
     """
-     total_salary = salary * (1 - tax_rate)
-    return total_salary
-total = task45_salary_after_tax(90000)
-print(total)
+    pass
 
 
 # 46
@@ -705,21 +566,7 @@ def task46_water_bill(units):
     - Next 20 units → 75 per unit
     - Beyond 50 units → 100 per unit
     """
-      if units <= 0:
-        return 0.0
-    bill = 0
-    if units <= 30:
-        bill += units * 50
-    elif units <= 50:
-        bill += 30 * 50
-        bill += (units - 30) * 75
-    else:
-        bill += 30 * 50
-        bill += 20 * 75
-        bill += (units - 50) * 100
-    return bill
-total = task46_water_bill(50)
-print(total)
+    pass
 
 
 # 47
@@ -730,16 +577,7 @@ def task47_find_longest_word(sentence):
     and returns the longest word in it.
     Example: "I love programming" → "programming"
     """
-     if not sentence:
-        return ""
-
-    words = sentence.split()
-    longest = words[0]
-
-    for w in words[1:]:
-        if len(w) > len(longest):
-            longest = w
-    return longest
+    pass
 
 
 # 48
@@ -750,11 +588,7 @@ def task48_banking_withdraw(balance, withdraw_amount):
     - If withdraw_amount <= balance, return new balance
     - Otherwise return "Insufficient funds"
     """
-      if withdraw_amount <= balance:
-        return balance - withdraw_amount
-    return "Insufficient funds"
-total = task48_banking_withdraw(20000,5000)
-print(total)
+    pass
 
 
 # 49
@@ -769,21 +603,7 @@ def task49_calculate_grade_point(score):
     - 40–44 → 1
     - <40 → 0
     """
-     if score < 0 or score > 100:
-        return None
-    if score >= 70:
-        return 5
-    elif score >= 60:
-        return 4
-    elif score >= 50:
-        return 3
-    elif score >= 45:
-        return 2
-    elif score >= 40:
-        return 1
-    else:
-        return 0
-total = task49_calculate_grade_point(90)
+    pass
 
 
 # 50
@@ -796,13 +616,4 @@ def task50_weather_advice(temperature, raining):
     - Else if temperature < 15 → "Wear a jacket"
     - Else → "Weather is fine"
     """
-    if raining:
-        return "Take an umbrella"
-    elif temperature > 30:
-        return "Wear light clothes"
-    elif temperature < 15:
-        return "Wear a jacket"
-    else:
-        return "Weather is fine"
-total = task50_weather_advice(40,"raining")
-print(total)
+    pass
