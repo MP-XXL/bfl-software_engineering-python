@@ -276,8 +276,8 @@ def task20_simple_interest(principal, rate, time):
     Write a function that calculates simple interest.
     Formula: (principal * rate * time) / 100
     """
-    interest = (principal * rate * time) / 100
-    return interest
+    return (principal * rate * time) / 100
+    #return interest
 print(task20_simple_interest(20, 0.25, 10))
 
 
@@ -564,7 +564,7 @@ def task37_convert_currency(amount, rate):
     using a given conversion rate.
     Example: convert_currency(100, 1500) → 150000
     """
-       convert = amount * rate
+    convert = amount * rate
     return convert
 total = task37_convert_currency(100,1500)
 print(total)
@@ -593,7 +593,7 @@ def task39_is_leap_year(year):
     Rule: Year divisible by 4 → leap year, but divisible by 100 → not leap,
     unless divisible by 400.
     """
-     if year % 400 == 0:
+    if year % 400 == 0:
         return True
     if year % 100 == 0:
         return False
@@ -611,7 +611,7 @@ def task40_password_strength(password):
     - Contains at least one uppercase letter
     Return "Strong" if all conditions are met, otherwise "Weak".
     """
-     length = len(password)
+    length = len(password)
 
     if length <= 6:
         return "weak"
@@ -662,7 +662,7 @@ def task43_student_average(scores):
     and returns the student's average score.
     Example: {"math": 80, "english": 70} → 75.0
     """
-       if not scores:
+    if not scores:
         return 0.0
     total = 0
     for subject in scores:
@@ -690,7 +690,7 @@ def task45_salary_after_tax(salary, tax_rate=0.15):
     Write a function that calculates net salary after deducting tax.
     Example: salary_after_tax(100000) → 85000
     """
-     total_salary = salary * (1 - tax_rate)
+    total_salary = salary * (1 - tax_rate)
     return total_salary
 total = task45_salary_after_tax(90000)
 print(total)
@@ -705,7 +705,7 @@ def task46_water_bill(units):
     - Next 20 units → 75 per unit
     - Beyond 50 units → 100 per unit
     """
-      if units <= 0:
+    if units <= 0:
         return 0.0
     bill = 0
     if units <= 30:
@@ -730,7 +730,7 @@ def task47_find_longest_word(sentence):
     and returns the longest word in it.
     Example: "I love programming" → "programming"
     """
-     if not sentence:
+    if not sentence:
         return ""
 
     words = sentence.split()
@@ -750,7 +750,7 @@ def task48_banking_withdraw(balance, withdraw_amount):
     - If withdraw_amount <= balance, return new balance
     - Otherwise return "Insufficient funds"
     """
-      if withdraw_amount <= balance:
+    if withdraw_amount <= balance:
         return balance - withdraw_amount
     return "Insufficient funds"
 total = task48_banking_withdraw(20000,5000)
@@ -769,7 +769,7 @@ def task49_calculate_grade_point(score):
     - 40–44 → 1
     - <40 → 0
     """
-     if score < 0 or score > 100:
+    if score < 0 or score > 100:
         return None
     if score >= 70:
         return 5
