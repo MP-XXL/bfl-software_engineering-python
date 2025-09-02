@@ -36,18 +36,20 @@ def cast_vote(voter_id, candidate):
         print(f"Voter with ID{voter_id} has already voted")
         return
     else:
+        voters.add(voter_id)
+        print(voters)
         for candids in candidates:
             if candids == candidate:
                 candidates[candidate] += 1
                 print(candidates)
         else:
             return"Candidate does not exist!"
-    print(voters)
     print(candidates)
+    print(voters)
 cast_vote(1, "Jon")
 cast_vote(2, "Mayor")
 cast_vote(3, "Jon")
-cast_vote(1, "Trump")
+#cast_vote(1, "Trump")
 def election_result():
     """Return the winner(s)."""
     # max_votes = #add logic
