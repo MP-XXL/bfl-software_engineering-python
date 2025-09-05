@@ -13,3 +13,43 @@ Example Usage:
     acc.withdraw(200)
     print(acc.get_balance())  # 1300
 """
+
+class Bank_account:
+
+    def __init__(self, **accounts):
+        self.accounts = accounts
+
+    def deposit(self, name, amount):
+        if name in self.accounts:
+            print(f"{name} found in the accounts")
+            self.accounts[name] += amount
+        else:
+            return "Name not found in the accounts"
+
+    def withdraw(self, name, amount):
+        if name in self.accounts:
+            print(f"{name} found in the accounts")
+            if self.accounts[name] >= amount:
+                self.accounts[name] -= amount
+            else:
+                return "Insuffiencient funds!"
+        else:
+            return "Name not found in the accounts"
+
+    def check_balance(self, name):
+        if name in self.accounts:
+            print(f"{name} found in the accounts")
+            return f" Your account balance = {self.accounts[name]}"
+        else:
+            return "Name not found in the accounts"
+ 
+
+
+
+
+account = Bank_account(Alice = 10400, Bobby = 38000, Mark = 150000)
+print(account.accounts)
+print(account.deposit("Abby", 31450))
+account.withdraw("Mark", 6050)
+print(account.check_balance("Mark"))
+print(account.accounts)
