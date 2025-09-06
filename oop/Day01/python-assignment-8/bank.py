@@ -16,6 +16,8 @@ Example Usage:
 
 class Bank_account:
 
+    history = []
+
     def __init__(self, **accounts):
         self.accounts = accounts
 
@@ -42,6 +44,12 @@ class Bank_account:
             return f" Your account balance = {self.accounts[name]}"
         else:
             return "Name not found in the accounts"
+
+    def check_history(self, name):
+        if name in self.accounts:
+            Bank_account.history.append({name:account.withdraw([name])})
+            print(Bank_account.history)
+        #history.append()
  
 
 
@@ -52,4 +60,5 @@ print(account.accounts)
 print(account.deposit("Abby", 31450))
 account.withdraw("Mark", 6050)
 print(account.check_balance("Mark"))
+account.check_history("Mark")
 print(account.accounts)
