@@ -39,7 +39,7 @@ class BankAccount:
         """)
 
 
-    def deposit(self, amount):
+    def deposit(self, amount, transfer = None):
         if amount <= 0:
             return "Invalid amount entered!"
         else:
@@ -47,14 +47,16 @@ class BankAccount:
                 return "Account is frozen. Can not perform transaction!"
             else:
                 self.balance += amount
-                if self.sms == True:
-                    self.sms_Alert_CR(amount)
-                    return "SUCCESS"
-                if self.email == True:
+                if transfer == True:
                     self.email_Alert_CR(amount)
+                    return
+                else:
+                    if self.sms == True:
+                        self.sms_Alert_CR(amount)
+                    if self.email == True:
+                        self.email_Alert_CR(amount)
 
-
-    def withdraw(self, amount):
+    def withdraw(self, amount, transfer = None):
         if self.balance < amount:
             return "Insufficient funds!"
         elif self.balance == 0:
@@ -64,22 +66,28 @@ class BankAccount:
                 return "Account is frozen. Can not perform transaction"
             else:
                 self.balance -= amount
-                if self.sms == True:
-                    self.sms_Alert_DR(amount)
-                    return "SUCCESS"
-                if self.email == True:
+                if transfer == True:
                     self.email_Alert_DR(amount)
+                    return
+                else:
+                    if self.sms == True:
+                        self.sms_Alert_DR(amount)
+                        return "SUCCESS"
+                    if self.email == True:
+                        self.email_Alert_DR(amount)
 
     def transfer(self, receiver, amount):
         if self.isFrozen == True:
-                return "Sendind account is frozen. Can not perform transaction"
+                return "Sending account is frozen. Can not perform transaction"
         else:
             if amount <= self.balance and amount != 0:
                 if receiver.isFrozen == True:
                     return "Destination account is frozen. Can not perform transaction"
                 else:
-                    if self.withdraw(amount) == "SUCCESS":
-                        receiver.deposit(amount)
+                    self.withdraw(amount, transfer = True)
+                    self.sms_TF_Alert_DR(amount, receiver)
+                    receiver.deposit(amount, transfer = True)
+                    self.sms_TF_Alert_CR(amount, receiver)
             else:
                 return "Insufficient funds!"
 
@@ -93,15 +101,16 @@ class BankAccount:
         if self.isAdmin == False:
             return "Can not modify account. Must be admin!"
         else:
-            name.isFrozen = True
+            name.isFrozen = False
 
 
 
     def sms_Alert_CR(self, amount):
         print(f"""
+        SMS ALERT!!!
 Acct: **{self.number}
 Amt: NGN{amount:,.2f} CREDIT
-Desc: -TRANSFER FROM {self.name}-OPAY-{self.name}
+Desc: - DEPOSIT FROM {self.name}-OPAY-{self.name}
 Avail Bal: {self.balance}
 Date: {self.time_str}
 """)
@@ -109,16 +118,40 @@ Date: {self.time_str}
 
     def sms_Alert_DR(self, amount):
         print(f"""
+        SMS ALERT!!!
 Acct: **{self.number}
 Amt: NGN{amount:,.2f} DEBIT
-Desc: -TRANSFER FROM {self.name}-OPAY-{self.name}
+Desc: - WITHDRAWAL FROM {self.name}-OPAY-{self.name}
+Avail Bal: {self.balance}
+Date: {self.time_str}
+""")
+
+    def sms_TF_Alert_CR(self, amount, receiver):
+        print(f"""
+        SMS ALERT!!!
+Acct: **{self.number}
+Amt: NGN{amount:,.2f} CREDIT
+Desc: -TRANSFER FROM {self.name}-OPAY-{receiver.name}
+Avail Bal: {receiver.balance}
+Date: {self.time_str}
+""")
+
+
+    def sms_TF_Alert_DR(self, amount, receiver):
+        print(f"""
+        SMS ALERT!!!
+Acct: **{self.number}
+Amt: NGN{amount:,.2f} DEBIT
+Desc: -TRANSFER FROM {self.name}-OPAY-{receiver.name}
 Avail Bal: {self.balance}
 Date: {self.time_str}
 """)
 
 
+
     def email_Alert_CR(self, amount):
         print(f"""
+        EMAIL ALERT!!!
 Dear {self.name},
 Whatsoever Bank electronic Notification Service (WeNS)
 We wish to inform you that a CREDIT transaction occurred on your account with us.
@@ -128,7 +161,7 @@ Transaction Notification
 Account Number : **{self.number}
 Transaction Location : 205
 Description : WEB PUR 
-Amount : NGN {amount}
+Amount : NGN {amount:,.2f}
 Value Date : {self.time_str}
 Remarks : 539983*****2873
 Time of Transaction : {self.time_str}
@@ -144,6 +177,7 @@ Thank you for choosing Whatsoever Bank Limited""")
 
     def email_Alert_DR(self, amount):
         print(f"""
+        EMAIL ALERT!!!
 Dear {self.name},
 Whatsoever Bank electronic Notification Service (WeNS)
 We wish to inform you that a DEBIT transaction occurred on your account with us.
@@ -153,7 +187,7 @@ Transaction Notification
 Account Number : **{self.number}
 Transaction Location : 205
 Description : WEB PUR 
-Amount : NGN {amount}
+Amount : NGN {amount:,.2f}
 Value Date : {self.time_str}
 Remarks : 539983*****2873
 Time of Transaction : {self.time_str}
@@ -196,4 +230,4 @@ print("====================================")
 MP.freeze_Acc(Gina)
 MP.unfreeze_Acc(Gina)
 print(Aaron.transfer(Bruno, 5000))
-print(Aaron.transfer(Ola, 2000))
+print(Aaron.transfer(Ola, 5000))
