@@ -21,3 +21,4 @@ def fib(num):
         series.append(next_series)
     return series
 print(fib(10))
+
