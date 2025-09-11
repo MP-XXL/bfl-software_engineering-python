@@ -21,10 +21,16 @@ class Bank:
         else:
             Bank.total_banks.append(self.bank_name)
 
+        if self.bank_branch in self.branches:
+            pass
+        else:
+            self.branches.append(self.bank_branch)
+
 opay = Bank("Opay", "MFB", "Jos")
 first_bank = Bank("First Bank", "Commercial", "Kaduna")
 stanbic_ibtc = Bank("Stanbic IBTC", "Commercial")
 gtbank = Bank("GTBank", "Commericial")
+#opay = Bank("Opay", "MFB", "Kaduna")
 
 
 class Account_Type(Enum):
