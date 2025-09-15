@@ -1,0 +1,11 @@
+{
+    "SID1": {
+        "first_name": "Pop",
+        "last_name": "Lol",
+        "password": "1234",
+        "age": 33,
+        "is_student": true,
+        "Active courses": [],
+        "Completed courses": []
+    }
+}
