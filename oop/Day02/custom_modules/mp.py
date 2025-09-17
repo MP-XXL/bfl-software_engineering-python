@@ -29,6 +29,9 @@ class Mp:
         del Mp.content[-1]
         print(Mp.content)
 
+    """def pop(self):
+        Mp.content = Mp.content[:-1]"""
+
     """def pop(self, index):
         i = 0
         for ele in Mp.content:
