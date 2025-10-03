@@ -28,8 +28,10 @@ def validate_email(prompt):
             user_input = input(prompt)
             if user_input == "":
                 raise ValueError
-            elif user_input.count("@") <= 0 or user_input.count("@") > 1 or user_input.index(".") < user_input.index("@"):
+            elif user_input.count("@") = 0 or user_input.count("@") > 1 or user_input.index(".") < user_input.index("@"):
                 raise InvalidEmailError(Exception)#remember error message when not using try - except
+            else:
+                return user_input
         except ValueError:
             print("Error! Email cannot be empty!")
         except InvalidEmailError:

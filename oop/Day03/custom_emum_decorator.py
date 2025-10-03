@@ -1,9 +1,15 @@
 from enum import Enum
 
 
-class CustomEnum(Enum):
+def CustomEnum(cls):
 
-    pass
+    enum_members = {}
+
+    for key, value in cls.__dict__.items():
+        if not key.startswith("__"):
+            enum_members[key] = value
+    
+    return Enum(cls.__name__, enum_members)
 
 
 @CustomEnum
@@ -12,3 +18,5 @@ class AccountType:
     CURRENT = "current"
 
 print(AccountType.SAVINGS.value)
+
+
