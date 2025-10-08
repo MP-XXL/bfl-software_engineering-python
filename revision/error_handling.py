@@ -1,5 +1,5 @@
 # Task1
-"""try:
+try:
     value = float(input("Enter a number")) #Type casting with float will raise value error instead of type error
     print(10/value)
 
@@ -9,21 +9,21 @@ except ZeroDivisionError:
       print("Enter any valid number apart from zero '0'")
 except Exception:
     print("Ops! Something happend!")
-"""
+
 # Task2
 
-'''try:
+try:
     name = input("Enter student name: ")
     grade = students_grades[name]
     print(f"{name}'s grade is : {grade}")
 
 except KeyError:
     print("Please enter only valid numbers!")
-except BaseException:
-    print("Only valid inputs are allowed!")'''
+except Exception:
+    print("Only valid inputs are allowed!")
 
 #Task3
-"""fruits = ["apple", "banana", "cherry", "date"]
+fruits = ["apple", "banana", "cherry", "date"]
 print(f"Available fruits:{fruits}")
 
 try:
@@ -34,9 +34,9 @@ except IndexError:
 except ValueError:
     print("You entered an invalid value")
 except BaseException:
-    print("Ops! Something went wrong!")"""
+    print("Ops! Something went wrong!")
 #Task4
-"""try:
+try:
     user_input = input("Enter numbers separated by commas : ")
     if "," in user_input:
         numbers = user_input.split(",")
@@ -49,8 +49,8 @@ except BaseException:
 except NameError:
     print("An invalid input was received and split did not occur!")
 except BaseException:
-    print("Oops! Something went wrong!")"""
-
+    print("Oops! Something went wrong!")
+#Task 5
 def read_int(prompt, minn = -10, maxx = 10):
     read = True
     while read:

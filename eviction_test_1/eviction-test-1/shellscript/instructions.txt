@@ -1,0 +1,21 @@
+BASH SCRIPTING TASK - FILE MANAGER
+==================================
+
+TASK: Create a bash script that:
+1. Asks user for a directory name
+2. Asks user for a filename  
+3. Creates the directory
+4. Creates the file inside the directory
+5. Writes "hello" to the file
+6. Changes to the directory
+7. Appends "world" to the file
+8. Displays the file contents
+
+REQUIREMENTS:
+- Script name: filemaker.sh
+- Must handle user input properly
+- Must create directory and file as specified
+- Must display final file contents
+
+RESTRICTIONS:
+- Script must run without errors
